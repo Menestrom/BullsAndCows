@@ -75,9 +75,15 @@ namespace BullsAndCows
                 CheckNumber = Console.ReadLine();
                 BullsNumber();
                 CowsNumber();
-                if (CheckNumber.Length > numberLength)
+                int lol;
+                bool check = int.TryParse(CheckNumber, out lol);
+                if (check == false)
                 {
-                    Console.WriteLine("Wrong length!!!U entered {0}", CheckNumber.Length);
+                    Console.WriteLine("Wrong type!!!Please, enter correct number");
+                }
+                else if (CheckNumber.Length > numberLength)
+                {
+                    Console.WriteLine("Wrong length!!!You entered {0}, required {1}", CheckNumber.Length, numberLength);
                     
                 }
                 else if (finalRandom != CheckNumber)
