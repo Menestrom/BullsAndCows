@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 
-
 namespace BullsAndCows
 {
     class BullsAndCows
@@ -11,6 +10,7 @@ namespace BullsAndCows
         static string CheckNumber;
         static int Bulls;
         static int Cows;
+        
         static void Main()
         {
             BullsAndCows Start = new BullsAndCows();
@@ -19,6 +19,7 @@ namespace BullsAndCows
             Console.WriteLine("FinalRandom = {0}", finalRandom);
             Start.Looped_call();
         }
+        
         public int Input()
         {
             Console.WriteLine("Enter length to generate the number: ");
@@ -33,6 +34,7 @@ namespace BullsAndCows
                 return numberLength;
             }
         }
+        
         public string Randomizer()
         {
             
@@ -43,7 +45,7 @@ namespace BullsAndCows
             }
             return finalRandom;
         }
-
+        
         public void BullsNumber()
         {
             char[] random_array = finalRandom.ToCharArray();
@@ -56,6 +58,7 @@ namespace BullsAndCows
                 }
             }
         }
+        
         public void CowsNumber()
         {
             var finalRandom_string = finalRandom.Select(c => c.ToString()).ToList();
@@ -67,6 +70,7 @@ namespace BullsAndCows
                 Cows -= Cows_number;
             }
         }
+        
         public void Looped_call()
         {
             while (finalRandom != CheckNumber)
